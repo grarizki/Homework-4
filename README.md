@@ -9,7 +9,6 @@
 ##### Arif Puji Setiawan
 ##### Putri Sanjiwani Dewi
 ##### Ahmad Rayis
-<<<<<<< HEAD
 ##### Mochamad Dwiki Pratama
 =======
 
