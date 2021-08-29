@@ -3,10 +3,6 @@
     font-family: sans-serif;
 }
 
-.custom-control-label {
-    font-weight: 400;
-    border-radius: 20px;
-}
 .outer {
     display: flex;
     justify-content: center;
@@ -25,11 +21,4 @@
     border-radius: 15px;
     transition: all .3s;
 }
-
-.outer .form-control:focus {
-    border-color: #167bff;
-    box-shadow: none;
-
-}
-
 
