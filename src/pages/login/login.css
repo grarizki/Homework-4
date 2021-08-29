@@ -31,16 +31,5 @@
     box-shadow: none;
 
 }
-.forgot-password,
-.forgot-password a {
-    text-align: right;
-    font-size: 13px;
-    padding-top: 10px;
-    color: black;
-    margin: 0;
-}
 
-.forgot-password a {
-    color: #167bff;
-    font-weight: bold;
-}
+
