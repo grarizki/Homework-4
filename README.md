@@ -9,11 +9,8 @@
 ##### Arif Puji Setiawan
 ##### Putri Sanjiwani Dewi
 ##### Ahmad Rayis
-<<<<<<< HEAD
 ##### Mochamad Dwiki Pratama
-=======
 
 **Tuti Wulandari**
->>>>>>> 796bc048aae5f7a500fad972f50011922441aa67
 
 ##### Krisda Gusti
