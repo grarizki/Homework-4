@@ -10,9 +10,7 @@ class Transaksi extends React.Component {
           <Row>
             <Col>
           <Form.Label>Jenis Transaksi:</Form.Label>
-          </Col>
-          <Col>
-          <Form.Select aria-label="Default select example" size="sm">
+          <Form.Select size="lg">
               <option>Pilih Jenis Transaksi</option>
               <optgroup label="Laku Pandai" selected="selected"></optgroup>
               <option value="Cashio">Cash-in & out </option>
