@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './pages/status/Home';
 import Transactions from './pages/status/Transactions';
 import Logout from './pages/status/Logout';
+import Transaksi from './Transaksi';
+import './Transaksi.css';
+
 // import Reports from './pages/Reports';
 // import  from './pages/Products';
 
@@ -14,7 +17,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' exact component={Home} />
+          <Route path='/' exact component={Transaksi} />
           <Route path='/reports' exact component={Transactions} />
           <Route path='/signout' exact component={Logout} />
         </Switch>
