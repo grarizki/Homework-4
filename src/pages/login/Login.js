@@ -8,9 +8,9 @@ function Login() {
 
   const styleButtton = {
     backgroundColor: "#292961",
-    width:"70vh",
     borderRadius:"10px",
-    marginTop:"10px"
+    marginTop:"10px",
+    flexWrap :"wrap",
   }
   return (
     <div className="outer">
@@ -48,9 +48,7 @@ function Login() {
               </Col>
             </Form.Group>
           </Form>
-          <div className="align-content-center">
             <Button type="submit" style={styleButtton} size="md"> Sign In</Button>
-          </div>
         </Container>
       </div>
     </div>
