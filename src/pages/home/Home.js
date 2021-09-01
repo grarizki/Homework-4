@@ -71,7 +71,7 @@ function Home() {
           </Row>
 
            <div className="float-right">
-            <Button type="submit">
+            <Button type="submit" style={{backgroundColor:"red"}}>
                 Batalkan
               </Button>
             </div>
