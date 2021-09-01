@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { SidebarData } from './SidebarData';
+import { SidebarData } from '../sidebar/SidebarData';
 import '../navbar/navbar.css';
 import { IconContext } from 'react-icons';
 
@@ -11,7 +11,7 @@ function NavbarComponent() {
 
   const showSidebar = () => setSidebar(!sidebar)
 
-    return (
+    return (  
       <>
       <IconContext.Provider value={{ color: '#1E212D' }}>
         <div className="navbar">
