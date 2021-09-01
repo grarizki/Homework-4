@@ -45,6 +45,7 @@
     border: none;
     border-radius: 3px;
     font-size: 11px;
+    cursor: pointer;
 }
 
 .mb-2:hover {
