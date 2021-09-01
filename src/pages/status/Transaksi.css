@@ -1,0 +1,19 @@
+
+.container {
+    margin-top: 100px;
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+
+label {
+    font-size: 25px;
+    margin-right: 50vh;
+}
+
+.form-select{
+    font-size: x-large;
+    width: 400px;
+}

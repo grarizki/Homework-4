@@ -2,6 +2,7 @@ import {Container, Form, Col, Row, Button, Image, InputGroup} from "react-bootst
 import "./login.css"
 import BRI from "../../assets/image/BRI2.png"
 import { FaUser, FaLock} from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 
 function Login() {
@@ -48,7 +49,7 @@ function Login() {
               </Col>
             </Form.Group>
           </Form>
-            <Button type="submit" style={styleButtton} size="md"> Sign In</Button>
+            <Link to="/home"> <Button type="submit" style={styleButtton} size="md" > Sign In</Button> </Link>
         </Container>
       </div>
     </div>
