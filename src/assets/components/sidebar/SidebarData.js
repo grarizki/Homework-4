@@ -18,12 +18,6 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Agents',
-        path: '/agent',
-        icon: <BsIcons.BsFillPeopleFill />,
-        cName: 'nav-text'
-    },
-    {
         title: 'Sign Out',
         path: '/signout',
         icon: <FaIcons.FaSignOutAlt />,
