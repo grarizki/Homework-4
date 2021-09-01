@@ -1,19 +1,9 @@
-import {
-  Container,
-  Form,
-  Col,
-  Row,
-  Button,
-  Image,
-  InputGroup,
-} from "react-bootstrap";
-import "./login.css";
+import { Form, Col, Row, Button, Image } from "react-bootstrap";
+import "../login/login.css";
 import BRI from "../../assets/image/BRI2.png";
-import { FaUser, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Login() {
-  
   const styleButtton = {
     backgroundColor: "#292961",
     borderRadius: "10px",
@@ -22,45 +12,37 @@ function Login() {
 
   return (
     <div className="outer-login">
-      <div className="inner-login" style={{ marginTop: "-70px" }}>
-        {/* <Container> */}
-          <div className="logo"><Image src={BRI}/></div>
-          <Form style={{ marginTop: "-30px" }}>
-            <Form.Group as={Row} className="mb-3" name="username">
-              <Form.Label column sm="2">
-                Username
-              </Form.Label>
-              <Col sm="8">
-                <InputGroup>
-                  <InputGroup.Text>
-                    <FaUser />
-                  </InputGroup.Text>
-                  <Form.Control type="text" placeholder="Enter your username" />
-                </InputGroup>
-              </Col>
-            </Form.Group>
-            <Form.Group
-              as={Row}
-              className="mb-3"
-              controlId="formPlaintextPassword"
-            >
-              <Form.Label column sm="2">
-                Password
-              </Form.Label>
-              <Col sm="6">
-                <InputGroup>
-                  <InputGroup.Text>
-                    <FaLock />
-                  </InputGroup.Text>
-                  <Form.Control type="password" placeholder="Password" />
-                </InputGroup>
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} className="mb-3" name="loginAs">
-              <Form.Label column sm="2">
+      <div className="inner-login" style={{ marginTop: "20px" }}>
+        <div className="logo" style={{ marginTop: "-30px" }}>
+          <Image src={BRI} />
+        </div>
+        <Form style={{ marginTop: "-50px", marginLeft: "60px" }}>
+          <Form.Group className="mb-3" as={Row}>
+            <Form.Label column sm="2">
+              Username
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control type="text" placeholder="Enter your username" />
+            </Col>
+          </Form.Group>
+
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
+            <Form.Label column sm="2">
+              Password
+            </Form.Label>
+            <Col sm="10">
+              <Form.Control type="password" placeholder="Password" />
+            </Col>
+          </Form.Group>
+          <Form.Group as={Row} className="mb-3" name="loginAs">
+              <Form.Label column sm="4">
                 Login As
               </Form.Label>
-              <Col sm="6">
+              <Col sm="10">
                 <Form.Select>
                   <option value="customer" selected>
                     Customer
@@ -69,13 +51,12 @@ function Login() {
                 </Form.Select>
               </Col>
             </Form.Group>
-          </Form>
           <Link to="/home">
             <Button type="submit" style={styleButtton} size="md">
               Sign In
             </Button>
           </Link>
-        {/* </Container> */}
+        </Form>
       </div>
     </div>
   );
