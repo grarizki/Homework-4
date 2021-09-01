@@ -1,38 +1,43 @@
   
-/* * {
+* {
     box-sizing: border-box;
     font-family: sans-serif;
-} */
-
-.outer {
-    text-align: Center;
 }
 
-.inner {
-    width:450px;
+/* .outer-home {
+    text-align: center;
+} */
+
+.inner-home {
+    width:500px;
     height: 310px;
     margin: auto;
     margin-top: 100px;
     background: #ffffff;
     box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-    padding: 40px 45px 45px 20px;
+    padding: 40px 20px 40px 70px;
     border-radius: 15px;
     transition: all .3s;
     display: flex;
     justify-content: center;
 }
 
-.Row{
+/* Row{
     display: flex;
     flex-direction: row;
     margin-bottom: 5px;
 
+} */
+
+.inner-home p{
+    font-size: 14px;
 }
 
-.inner p{
-    font-size: 14px;
-    text-align: left;
+.status {
+    text-align: center;
+    font-size: 24px;
 }
+
 .Batalkan{
     margin: 30px 0px;
 }
@@ -58,24 +63,4 @@
 .Status p{
     font-size: 16px;
     font-weight: bold;
-}
-
-.Lable1,.Lable2{
-    margin-right: 60px;
-}
-
-.Lable3{
-    margin-right: 36px;
-}
-
-.Lable4, .Lable6{
-    margin-right: 72px;
-}
-
-.Lable5{
-    margin-right: 70px;
-}
-
-.Lable7{
-    margin-right: 111px;
 }
