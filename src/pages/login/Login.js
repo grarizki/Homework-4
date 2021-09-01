@@ -1,12 +1,4 @@
-import {
-  Container,
-  Form,
-  Col,
-  Row,
-  Button,
-  Image,
-  InputGroup,
-} from "react-bootstrap";
+import { Form,  Col,  Row,  Button,  Image,  InputGroup } from "react-bootstrap";
 import "./login.css";
 import BRI from "../../assets/image/BRI2.png";
 import { FaUser, FaLock } from "react-icons/fa";
