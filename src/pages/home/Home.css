@@ -38,13 +38,13 @@
     font-size: 24px;
 }
 
-.Batalkan{
+/* .Batalkan{
     margin: 30px 0px;
-}
+} */
 
-.mb-2{
+/* Button{
     font-weight: bold;
-    background:#F03D3E;
+    background-color:#F03D3E;
     color: white;
     padding:7px 20px;
     border: none;
@@ -53,9 +53,10 @@
     cursor: pointer;
 }
 
-.mb-2:hover {
+Button:hover {
     background-color: #b82324;
-}
+} */
+
 .Status{
     margin:20px 0px 15px 0px;
 }
