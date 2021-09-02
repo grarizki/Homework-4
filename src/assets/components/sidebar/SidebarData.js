@@ -6,19 +6,19 @@ import * as BsIcons from "react-icons/bs";
 
 export const SidebarData = [
     {
-        title: 'Home',
+        title: 'Beranda',
         path: '/home',
         icon: <AiIcons.AiFillHome/>,
         cName: 'nav-text' 
     },
     {
-        title: 'Transactions',
+        title: 'Transaksi',
         path: '/transaksi',
         icon: <IoIcons.IoIosPaper />,
         cName: 'nav-text'
     },
     {
-        title: 'Sign Out',
+        title: 'Keluar',
         path: '/signout',
         icon: <FaIcons.FaSignOutAlt />,
         cName: 'nav-text'

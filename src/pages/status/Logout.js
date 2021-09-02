@@ -7,7 +7,7 @@ function Logout() {
     <div>
       <NavbarComponent />
     <div className='logout'>
-      <h1>Logout</h1>
+      <h1>Keluar</h1>
     </div>
     </div>
   );
