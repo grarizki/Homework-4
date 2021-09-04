@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Form, Col, Row, Button, Navbar} from 'react-bootstrap';
 import'../home/Home.css'
 import NavbarComponent from "../../assets/components/navbar/NavbarComponent"
+import {useAuthorizedContext} from '../../AuthorizedContext'
 
 class Time extends Component {
   state={
@@ -17,6 +18,8 @@ class Time extends Component {
 }
 
 function Home() {
+  const { isLoggedIn, userLevel } = useAuthorizedContext()
+  console.log("value >> ", isLoggedIn, userLevel)
   return (  
     <div className="outer-home">
       <NavbarComponent />
