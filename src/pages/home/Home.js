@@ -4,19 +4,6 @@ import'../home/Home.css'
 import NavbarComponent from "../../assets/components/navbar/NavbarComponent"
 import {useAuthorizedContext} from '../../AuthorizedContext'
 
-class Time extends Component {
-  state={
-    myCurrentTime : new Date().toLocaleString(),
-  }
-  render(){
-    return (
-      <div className="Date">
-        {this.state.myCurrentTime}
-      </div>
-    );
-  }
-}
-
 function Home() {
   const { isLoggedIn, userLevel } = useAuthorizedContext()
   console.log("value >> ", isLoggedIn, userLevel)
@@ -33,7 +20,7 @@ function Home() {
             <p>Waktu Request </p>
             </Col>
            <Col sm={7} offset={0}> 
-           <p> : 12 Agustus 2021</p>
+           <p> : {new Date().toLocaleString()}</p>
            </Col>
           </Row>
           <Row style={{width:"500px"}}>
