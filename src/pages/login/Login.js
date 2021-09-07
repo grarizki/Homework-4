@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import "./login.css";
 import { Form, Col, Row, Button, Image } from "react-bootstrap";
 import "../login/login.css";
@@ -7,25 +7,49 @@ import { useAuthorizedContext } from "../../AuthorizedContext";
 import BRI from "../../assets/image/BRI2.png";
 import { useHistory } from "react-router-dom";
 
-function Login() {
-  console.log("test")
-  const styleButtton = {
-    backgroundColor: "#292961",
-    borderRadius: "10px",
-    marginTop: "10px",
-  };
-  const history = useHistory();
-  const { setAuthorizedValue } = useAuthorizedContext();
-  const [selectedUserLevel, setSelectedUserLevel] = React.useState("customer");
+const styleButtton = {
+  backgroundColor: "#292961",
+  borderRadius: "10px",
+  marginTop: "10px",
+};
 
-  const handleSignInButton = React.useCallback(() => {
+function Login() {
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [data, setData] = useState({});
+  const { setAuthorizedValue } = useAuthorizedContext();
+  const [selectedUserLevel, setSelectedUserLevel] = useState("");
+  
+  const history = useHistory();
+
+  const handleSignInButton = useCallback(() => {
     setAuthorizedValue(true, selectedUserLevel);
     history.push("/home");
   }, [setAuthorizedValue, history, selectedUserLevel]);
 
-  const handleSelectedUserLevel = React.useCallback((event) => {
+  const handleSelectedUserLevel = useCallback((event) => {
     setSelectedUserLevel(event.target.value);
   }, []);
+
+  const handleChange = useCallback((e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    switch (name) {
+      case "username":
+        setUsername(value);
+        setData({ ...data, [name]: value });
+        break;
+      case "password":
+        setPassword(value);
+        setData({ ...data, [name]: value });
+        break;
+      default:
+    }
+  }, [username, password, data]);
+
+  console.log("Ini data", data);
+  console.log("INI ROLE", selectedUserLevel);
 
   return (
     <div className="outer-login">
@@ -39,7 +63,13 @@ function Login() {
               Username
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="text" placeholder="Enter your username" />
+              <Form.Control
+                type="text"
+                placeholder="Enter your username"
+                name="username"
+                value={username}
+                onChange={handleChange}
+              />
             </Col>
           </Form.Group>
 
@@ -52,7 +82,13 @@ function Login() {
               Password
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+              />
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3" name="loginAs">
@@ -60,15 +96,21 @@ function Login() {
               Login As
             </Form.Label>
             <Col sm="10">
-              <Form.Select onChange={handleSelectedUserLevel}>
-                <option value="customer" selected>
-                  Customer
+              <Form.Select onChange={handleSelectedUserLevel} placeholder="Select a Role">
+                <option disabled selected hidden>
+                  -- choose --
                 </option>
+                <option value="customer">Customer</option>
                 <option value="agent">Agent</option>
               </Form.Select>
             </Col>
           </Form.Group>
-          <Button type="submit" style={styleButtton} size="md" onClick={handleSignInButton}>
+          <Button
+            type="submit"
+            style={styleButtton}
+            size="md"
+            onClick={handleSignInButton}
+          >
             Sign In
           </Button>
         </Form>
