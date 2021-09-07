@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./login.css";
 import { Form, Col, Row, Button, Image } from "react-bootstrap";
 import "../login/login.css";
@@ -7,13 +7,18 @@ import { useAuthorizedContext } from "../../AuthorizedContext";
 import BRI from "../../assets/image/BRI2.png";
 import { useHistory } from "react-router-dom";
 
+const styleButtton = {
+  backgroundColor: "#292961",
+  borderRadius: "10px",
+  marginTop: "10px",
+};
+
 function Login() {
-  console.log("test")
-  const styleButtton = {
-    backgroundColor: "#292961",
-    borderRadius: "10px",
-    marginTop: "10px",
-  };
+
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [data, setData] = useState({})
+ 
   const history = useHistory();
   const { setAuthorizedValue } = useAuthorizedContext();
   const [selectedUserLevel, setSelectedUserLevel] = React.useState("customer");
@@ -27,6 +32,30 @@ function Login() {
     setSelectedUserLevel(event.target.value);
   }, []);
 
+
+
+  const handleChange = (e) =>  {
+    const name = e.target.name
+    const value = e.target.value
+
+    switch (name) {
+        case "username":
+            setUsername(value)
+            setData({...data, [name]: value})
+            break;
+        case "password":
+            setPassword(value)
+            setData({...data, [name]: value})
+            break;
+        default:
+    }
+}
+
+console.log("Ini data", data)
+console.log("INI ROLE", selectedUserLevel)
+
+
+
   return (
     <div className="outer-login">
       <div className="inner-login" style={{ marginTop: "20px" }}>
@@ -35,11 +64,12 @@ function Login() {
         </div>
         <Form style={{ marginTop: "-50px", marginLeft: "60px" }}>
           <Form.Group className="mb-3" as={Row}>
-            <Form.Label column sm="2">
+            <Form.Label column sm="2" >
               Username
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="text" placeholder="Enter your username" />
+              <Form.Control type="text" placeholder="Enter your username" name="username" value={username} 
+              onChange={handleChange} />
             </Col>
           </Form.Group>
 
@@ -48,11 +78,12 @@ function Login() {
             className="mb-3"
             controlId="formPlaintextPassword"
           >
-            <Form.Label column sm="2">
+            <Form.Label column sm="2" >
               Password
             </Form.Label>
             <Col sm="10">
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="password" placeholder="Password" name="password" value={password} 
+                onChange={handleChange}/>
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3" name="loginAs">
@@ -61,7 +92,8 @@ function Login() {
             </Form.Label>
             <Col sm="10">
               <Form.Select onChange={handleSelectedUserLevel}>
-                <option value="customer" selected>
+                <option disabled selected hidden>-- choose --</option>
+                <option value="customer">
                   Customer
                 </option>
                 <option value="agent">Agent</option>
