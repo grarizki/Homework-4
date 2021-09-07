@@ -3,7 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Logout from "./pages/status/Logout";
-import Transaksi from "./pages/transaksi/Transaksi";
+import TransaksiPage from "./pages/transaksi/TransaksiPage";
 import AuthorizedRoute from "./AuthorizedRoute";
 import RestrictedWrapper from "./RestrictedWrapper";
 import { AuthorizedContextProvider } from "./AuthorizedContext";
@@ -18,11 +18,7 @@ function App() {
               <Login />
             </RestrictedWrapper>
           </Route>
-          <AuthorizedRoute
-            path="/transaksi"
-            exact
-            component={Transaksi}
-          ></AuthorizedRoute>
+          <AuthorizedRoute path="/transaksi" exact component={TransaksiPage}></AuthorizedRoute>
           <Route path="/signout" exact component={Logout} />
           <AuthorizedRoute path="/home" exact component={Home}></AuthorizedRoute>
         </Switch>

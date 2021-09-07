@@ -14,13 +14,12 @@ const styleButtton = {
 };
 
 function Login() {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState({});
   const { setAuthorizedValue } = useAuthorizedContext();
   const [selectedUserLevel, setSelectedUserLevel] = useState("");
-  
+
   const history = useHistory();
 
   const handleSignInButton = useCallback(() => {
@@ -32,21 +31,24 @@ function Login() {
     setSelectedUserLevel(event.target.value);
   }, []);
 
-  const handleChange = useCallback((e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    switch (name) {
-      case "username":
-        setUsername(value);
-        setData({ ...data, [name]: value });
-        break;
-      case "password":
-        setPassword(value);
-        setData({ ...data, [name]: value });
-        break;
-      default:
-    }
-  }, [username, password, data]);
+  const handleChange = useCallback(
+    (e) => {
+      const name = e.target.name;
+      const value = e.target.value;
+      switch (name) {
+        case "username":
+          setUsername(value);
+          setData({ ...data, [name]: value });
+          break;
+        case "password":
+          setPassword(value);
+          setData({ ...data, [name]: value });
+          break;
+        default:
+      }
+    },
+    [username, password, data]
+  );
 
   console.log("Ini data", data);
   console.log("INI ROLE", selectedUserLevel);
@@ -59,43 +61,27 @@ function Login() {
         </div>
         <Form style={{ marginTop: "-50px", marginLeft: "60px" }}>
           <Form.Group className="mb-3" as={Row}>
-            <Form.Label column sm="2">
+            <Form.Label column sm="3">
               Username
             </Form.Label>
-            <Col sm="10">
-              <Form.Control
-                type="text"
-                placeholder="Enter your username"
-                name="username"
-                value={username}
-                onChange={handleChange}
-              />
+            <Col sm="9">
+              <Form.Control type="text" placeholder="Enter your username" name="username" value={username} onChange={handleChange} />
             </Col>
           </Form.Group>
 
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            controlId="formPlaintextPassword"
-          >
-            <Form.Label column sm="2">
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
+            <Form.Label column sm="3">
               Password
             </Form.Label>
-            <Col sm="10">
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-              />
+            <Col sm="9">
+              <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={handleChange} />
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3" name="loginAs">
-            <Form.Label column sm="4">
+            <Form.Label column sm="3">
               Login As
             </Form.Label>
-            <Col sm="10">
+            <Col sm="9">
               <Form.Select onChange={handleSelectedUserLevel} placeholder="Select a Role">
                 <option disabled selected hidden>
                   -- choose --
@@ -105,14 +91,14 @@ function Login() {
               </Form.Select>
             </Col>
           </Form.Group>
-          <Button
-            type="submit"
-            style={styleButtton}
-            size="md"
-            onClick={handleSignInButton}
-          >
-            Sign In
-          </Button>
+          <Form.Group as={Row} className="mb-3 button-login">
+            <Form.Label column sm="3"></Form.Label>
+            <Col sm="9">
+              <Button type="submit" style={styleButtton} size="md" onClick={handleSignInButton}>
+                Sign In
+              </Button>
+            </Col>
+          </Form.Group>
         </Form>
       </div>
     </div>
